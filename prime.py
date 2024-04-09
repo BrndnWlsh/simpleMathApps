@@ -1,12 +1,7 @@
-def prime_checker():
-    loop = 1
-    while loop == loop:
-        num = input("provide a number: ")
+def prime_checker(num):
 
-        if not num.isdigit():
-            print("Please provide a valid positive integer.")
-        else:
-            break
+    if not num.isdigit():
+        return False
     num = int(num)
     if num <= 1:
         prime = False
@@ -18,10 +13,6 @@ def prime_checker():
                 break
 
     if prime:
-        print("your number is prime")
+        return "your number is prime"
     else:
-        print("your number is not prime")
-
-
-if __name__ == '__main__':
-    prime_checker()
+        return "your number is not prime"

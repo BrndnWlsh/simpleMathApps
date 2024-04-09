@@ -1,13 +1,7 @@
-def fibonacci_sequence():
-    num = 'i'
-    while not num.isdigit():
-        num = input("How many terms of the Fibonacci sequence would you like to list? ")
-        if num.isdigit():
-            num = int(num)
-            break
-        else:
-            print("Please provide a positive integer")
-
+def fibonacci_sequence(num):
+    if not num.isdigit():
+        return False
+    num = int(num)
     if num == 0:
         fib_sequence = []
     elif num == 1:
@@ -18,9 +12,4 @@ def fibonacci_sequence():
             next_term = fib_sequence[-1] + fib_sequence[-2]
             fib_sequence.append(next_term)
 
-    print("Fibonacci sequence up to", num, "terms:")
-    print(fib_sequence)
-
-
-if __name__ == '__main__':
-    fibonacci_sequence()
+    return f"Fibonacci sequence up to {num} terms: {fib_sequence}"
